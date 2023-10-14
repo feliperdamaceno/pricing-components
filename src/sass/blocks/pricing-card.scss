@@ -1,10 +1,11 @@
 @use '../helpers/' as *;
 
-.card {
+.pricing_card {
   border-radius: useValue('border-radius', 400);
   color: useColor('neutral', 100);
   max-width: 38rem;
   padding: useValue('padding', 900);
+  background-color: useColor('neutral', 900);
 
   @include useProperty('shadow', 'sm');
 

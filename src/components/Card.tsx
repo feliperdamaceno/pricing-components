@@ -2,17 +2,18 @@ import type { ReactNode } from 'react'
 
 type CardVariations = 'gradient'
 
-const styles: {
+const variants: {
   [K in CardVariations]: string
 } = {
-  gradient: 'card gradient'
+  gradient: 'gradient'
 }
 
 interface CardProps {
-  variation: CardVariations
-  render: (style: string) => ReactNode
+  variation?: CardVariations
+  render: (variation?: string) => ReactNode
 }
 
 export default function Card({ variation, render }: CardProps) {
-  return render(styles[variation])
+  if (!variation) return render()
+  return render(variants[variation])
 }

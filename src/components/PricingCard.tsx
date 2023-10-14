@@ -5,8 +5,8 @@ export default function PricingCard() {
   return (
     <Card
       variation="gradient"
-      render={(style) => (
-        <div className={`flow ${style}`}>
+      render={(variant) => (
+        <div className={`flow pricing_card ${variant}`}>
           <h2>Free plan</h2>
 
           <div>
