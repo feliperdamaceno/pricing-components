@@ -13,6 +13,7 @@
 body {
   color: useColor('neutral', 900);
   font-family: useValue('font-family', 'regular');
+  font-weight: useValue('font-weight', 'medium');
   font-size: useValue('font-size', 400);
   line-height: useValue('line-height', 'regular');
 }
@@ -31,6 +32,7 @@ h1,
 h2,
 h3 {
   @include useProperty('measure', 'compact');
+  font-family: useValue('font-family', 'heading');
   font-weight: useValue('font-weight', 'bold');
   line-height: useValue('line-height', 'heading');
 }
@@ -45,4 +47,33 @@ h2 {
 
 h3 {
   font-size: useValue('font-size', 600);
+}
+
+button {
+  color: useColor('neutral', 900);
+  font-size: 0.9em;
+  font-weight: bold;
+
+  background-color: useColor('neutral', 100);
+  border-radius: useValue('border-radius', 300);
+  padding-block: useValue('padding', 300);
+  padding-inline: useValue('padding', 700);
+
+  cursor: pointer;
+  transition-property: box-shadow, translate;
+  transition-timing-function: useValue('transition-timing', 'in-out');
+  transition-duration: 150ms;
+
+  &:hover {
+    @include useProperty('shadow', 'md');
+    translate: 0.1rem -0.1rem;
+  }
+}
+
+main {
+  background-color: useColor('secondary', 700);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
 }

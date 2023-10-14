@@ -61,27 +61,15 @@ $base-scale: map-get($default-scales, 'major') !default;
 */
 $base-colors: (
   primary: (
-    100: hsl(204, 94%, 94%),
-    200: hsl(201, 94%, 86%),
-    300: hsl(199, 95%, 74%),
-    400: hsl(198, 93%, 60%),
-    500: hsl(200, 98%, 39%),
-    900: hsl(202, 80%, 24%)
+    400: hsl(27, 98%, 56%),
+    500: hsl(13, 93%, 66%)
   ),
   secondary: (
-    100: hsl(149, 80%, 90%),
-    200: hsl(152, 76%, 80%),
-    300: hsl(156, 72%, 67%),
-    400: hsl(158, 64%, 52%),
-    500: hsl(160, 84%, 39%),
-    900: hsl(164, 86%, 16%)
+    700: hsl(229, 34%, 12%)
   ),
   neutral: (
     100: hsl(240, 5%, 96%),
-    200: hsl(240, 6%, 90%),
-    300: hsl(240, 5%, 84%),
-    400: hsl(240, 5%, 65%),
-    900: hsl(240, 6%, 10%)
+    900: hsl(240, 4%, 9%)
   )
 ) !default;
 
@@ -94,17 +82,12 @@ $global-tokens: (
   font-family: (
     value: (
       regular: (
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
+        'Inter',
         sans-serif
+      ),
+      heading: (
+        'EB Garamond',
+        serif
       )
     ),
     prefix: (
