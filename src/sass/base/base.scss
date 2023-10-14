@@ -12,6 +12,7 @@
 
 body {
   color: useColor('neutral', 900);
+  background-color: useColor('secondary', 700);
   font-family: useValue('font-family', 'regular');
   font-weight: useValue('font-weight', 'medium');
   font-size: useValue('font-size', 400);
@@ -71,9 +72,19 @@ button {
 }
 
 main {
-  background-color: useColor('secondary', 700);
+  box-sizing: content-box;
+  padding-inline: useValue('padding', 400);
+  margin-inline: auto;
+  max-width: useValue('measure', 'longform');
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  place-items: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+  align-items: center;
+  gap: useValue('gap', 600);
+
+  & > {
+    flex: 1;
+  }
 }
