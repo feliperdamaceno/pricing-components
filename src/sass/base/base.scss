@@ -80,7 +80,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   place-items: center;
-  align-content: center;
+  place-content: center;
   gap: useValue('gap', 600);
 
   & > * {

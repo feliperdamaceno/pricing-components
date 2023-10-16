@@ -11,7 +11,7 @@ interface ActiveUsersSliderProps {
 
 export default function ActiveUsersSlider({ config }: ActiveUsersSliderProps) {
   const [currentValue, setCurrentValue] = useState(config.min)
-  const [tooltipValue, setTooltipValue] = useState(0)
+  const [tooltipPosition, setTooltipPosition] = useState(0)
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget
@@ -19,11 +19,10 @@ export default function ActiveUsersSlider({ config }: ActiveUsersSliderProps) {
   }
 
   const handleHover = (event: MouseEvent<HTMLInputElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    const position = event.clientX - rect.left
-    const sliderWidth = rect.width
-    const value = (position / sliderWidth) * 100
-    setTooltipValue(Math.round(value))
+    const slider = event.currentTarget.getBoundingClientRect()
+    const position = event.clientX - slider.left
+    const value = (position / slider.width) * 100
+    setTooltipPosition(Math.round(value))
   }
 
   return (
@@ -41,7 +40,7 @@ export default function ActiveUsersSlider({ config }: ActiveUsersSliderProps) {
         />
 
         <span
-          style={{ left: `calc(${tooltipValue}% - 35px)` }}
+          style={{ left: `calc(${tooltipPosition}% - 3.3rem)` }}
           className="tooltip"
         >
           {currentValue}

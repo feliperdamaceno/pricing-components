@@ -3,9 +3,7 @@ import { PricingCard, TabList, ActiveUsersSlider } from './components'
 export default function App() {
   return (
     <main>
-      <div>
-        <PricingCard />
-      </div>
+      <PricingCard />
 
       <div className="flow">
         <h3 className="text-center text-neutral-100">What is your use case?</h3>
