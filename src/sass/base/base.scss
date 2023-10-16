@@ -83,8 +83,4 @@ main {
   place-content: center;
   align-items: center;
   gap: useValue('gap', 600);
-
-  & > {
-    flex: 1;
-  }
 }

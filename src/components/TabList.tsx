@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-interface TabListProps {
-  options: string[]
-  onClick: (...args: unknown[]) => unknown
+interface TabListProps<T> {
+  tabs: string[]
+  onClick: (...args: T[]) => void
 }
 
-export default function TabList({ options, onClick }: TabListProps) {
+export default function TabList<T>({ tabs, onClick }: TabListProps<T>) {
   const [active, setActive] = useState(0)
 
   const handleClick = (index: number) => {
@@ -15,7 +15,7 @@ export default function TabList({ options, onClick }: TabListProps) {
 
   return (
     <div className="tab_list">
-      {options.map((tab, index) => (
+      {tabs.map((tab, index) => (
         <button
           key={index}
           className={index === active ? 'active' : ''}
