@@ -32,7 +32,6 @@ footer {
 h1,
 h2,
 h3 {
-  @include useProperty('measure', 'compact');
   font-family: useValue('font-family', 'heading');
   font-weight: useValue('font-weight', 'bold');
   line-height: useValue('line-height', 'heading');
@@ -80,7 +79,11 @@ main {
 
   display: flex;
   flex-wrap: wrap;
-  place-content: center;
-  align-items: center;
+  place-items: center;
+  align-content: center;
   gap: useValue('gap', 600);
+
+  & > * {
+    flex: 1 1 30rem;
+  }
 }
